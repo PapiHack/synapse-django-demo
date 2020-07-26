@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="div col-lg-12">
+                <h1>Welcome to Synapse Django Blog App</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="div col-lg-12">
+                <h3>List od Posts ({{ posts | length }})</h3>
+                <a href="{% url 'add_post' %}" class="btn btn-success">Ajouter un nouveau post</a>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="div col-lg-6">
+                {% for post in posts %}
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title">{{ post.title }}</h4>
+                            <p class="card-text"> {{ post.content | truncatewords:10 }} </p>
+                            <a href="{% url 'post_detail' post.id %}" class="btn btn-primary">Detail</a>
+                            <a href="{% url 'edit_post' post.id %}" class="btn btn-warning">Edit</a>
+                            <a href="{% url 'delete_post' post.id %}" class="btn btn-danger">Delete</a>
+                        </div>
+                  </div>
+                  <br>
+                 {% empty %}
+                 <p>There is no post yet. <a href="{% url 'add_post'%}" class="btn btn-success">Add a new post</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock  %}

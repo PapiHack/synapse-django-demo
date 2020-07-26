@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="div col-lg-12">
+                <h3>Detail of post</h3>
+                <a href="{% url 'add_post'%}" class="btn btn-success">Add a new post</a>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="div col-lg-8">
+                <div class="card">
+                    <div class="card-block">
+                        <h4 class="card-title">{{ post.title }}</h4>
+                        <p class="card-text"> {{ post.content}} </p>
+                        <a href="{% url 'home'%}" class="btn btn-primary">Back to home page</a>
+                    </div>
+              </div>
+            </div>
+        </div>
+    </div>
+{% endblock  %}
