@@ -9,8 +9,8 @@
         </div>
         <div class="row">
             <div class="div col-lg-12">
-                <h3>List od Posts ({{ posts | length }})</h3>
-                <a href="{% url 'add_post' %}" class="btn btn-success">Ajouter un nouveau post</a>
+                <h3>List of Posts ({{ posts | length }})</h3>
+                <a href="{% url 'add_post' %}" class="btn btn-success">Add a new post</a>
             </div>
         </div>
         <br>
@@ -28,7 +28,7 @@
                   </div>
                   <br>
                  {% empty %}
-                 <p>There is no post yet. <a href="{% url 'add_post'%}" class="btn btn-success">Add a new post</p>
+                 <p>There is no post yet. <a href="{% url 'add_post'%}">Add a new post</p>
                 {% endfor %}
             </div>
         </div>

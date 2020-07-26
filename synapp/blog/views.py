@@ -16,8 +16,15 @@ def add_post(request):
         return redirect(home)
     return render(request, 'blog/add.html')
 
-def edit_post(request):
-    return render(request, 'blog/edit.html')
+def edit_post(request, id):
+    post = Post.objects.get(id=id)
+    if request.method == 'POST':
+        form = request.POST
+        post.title = form['title']
+        post.content = form['content']
+        post.save()
+        return redirect(home)
+    return render(request, 'blog/edit.html', locals())
 
 def post_detail(request, id):
     post = Post.objects.get(id=id)
