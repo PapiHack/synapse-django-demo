@@ -1,0 +1,6 @@
+myenv
+screenshots
+README.md
+.git
+.vscode
+./synapp/db.sqlite3
