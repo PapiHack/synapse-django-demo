@@ -20,7 +20,7 @@ Application en django construite lors d'une démo du club synapse.
 
 Si vous avez déjà `Docker` disponible sur votre machine, vous pouvez juste procéder comme suit :
 
-- Placez vous avec votre terminal, au même niveau du fichier `Dockerfile` (ce repertoire) puis exécuter la commande suivante : `docker run --name django-app -d -p 8000:8000 synapse-django-app`
+- Placez vous avec votre terminal, au même niveau du fichier `Dockerfile` (ce repertoire) puis exécuter la commande suivante : `docker run --name synapse-django-app -d -p 8000:8000 synapse-django-app`
 
 - Rdv à l'adresse `http://localhost:8000/blog/home`
 
